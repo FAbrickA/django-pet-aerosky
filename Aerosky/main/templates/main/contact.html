@@ -1,0 +1,110 @@
+{% extends "main/base.html" %}
+
+{% load static %}
+
+{% block navbar %}
+	<li><a href="{% url 'main:home' %}">Home</a></li>
+	<li><a href="{% url 'main:about' %}">About</a></li>
+	<li><a href="{% url 'main:services' %}">Services</a></li>
+	<li><a href="{% url 'main:price' %}">Price</a></li>
+	<li><a href="{% url 'main:projects' %}">Projects</a></li>
+	<li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <b class="caret"></b></a>
+		<ul class="dropdown-menu">
+			<li><a href="{% url 'main:right-sidebar' %}">Right Sidebar</a></li>
+			<li><a href="#">Dummy Link1</a></li>
+			<li><a href="#">Dummy Link2</a></li>
+			<li><a href="#">Dummy Link3</a></li>
+		</ul>
+	</li>
+	<li class="active"><a href="{% url 'main:contact' %}">Contact</a></li>
+{% endblock navbar %}
+
+{% block content %}
+	<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<h3 class="section-title">Your Message</h3>
+						<p>
+						Lorem Ipsum is inting and typesetting in simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the is dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+						</p>
+						{% for message in messages %}
+							<div class="alert alert-info" role="alert">
+								{{ message }}
+							</div>
+						{% endfor %}
+						<form class="form-light mt-20" role="form" method="POST">
+							{% csrf_token %}
+							<div class="form-group">
+								<label for="{{ form.name.id_for_label }}">Name</label>
+								{{ form.name }}
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="{{ form.email.id_for_label }}">Email</label>
+										{{ form.email }}
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="{{ form.phone.id_for_label }}">Phone</label>
+										{{ form.phone }}
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="{{ form.subject.id_for_label }}">Subject</label>
+								{{ form.subject }}
+							</div>
+							<div class="form-group">
+								<label for="{{ form.message.id_for_label }}">Message</label>
+								{{ form.message }}
+							</div>
+							<button type="submit" class="btn btn-two">Send message</button><p><br/></p>
+						</form>
+					</div>
+					<div class="col-md-6">
+						<div class="row">
+							<div class="col-md-6">
+								<h3 class="section-title">Office Address</h3>
+								<div class="contact-info">
+									<h5>Address</h5>
+									<p>5th Street, Carl View - United States</p>
+									
+									<h5>Email</h5>
+									<p>info@webthemez.com</p>
+									
+									<h5>Phone</h5>
+									<p>+09 123 1234 123</p>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<h3 class="section-title">Timings</h3>
+								<div class="contact-info">
+									<h5>Monday - Friday</h5>
+									<p>09:00 AM - 6:30 PM</p>
+									
+									<h5>Saturday</h5>
+									<p>Closed</p>
+									
+									<h5>Sunday</h5>
+									<p>Closed</p>
+								</div>
+							</div>
+						</div>
+						<h3 class="section-title">Get connected</h3>
+						<p>
+						Lorem ipsumn qersl ioinm sersoe non urna dolor sit amet, consectetur piesn qersl ioinm sersoe non urna dolor aecena.
+						</p>						
+					</div>
+				</div>
+			</div>
+{% endblock content %}
+
+{% block scripts %}
+	{{ block.super }}
+	<!-- Google Maps -->
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+	<script src="{% static 'assets/js/google-map.js' %}"></script>
+{% endblock scripts %}

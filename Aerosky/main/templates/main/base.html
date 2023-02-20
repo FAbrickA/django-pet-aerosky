@@ -1,0 +1,164 @@
+{% load static %}
+
+<!--
+Author: WebThemez
+Author URL: http://webthemez.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Real Estate Builders Free Responsive Website Templates - icon">
+	<meta name="author" content="webThemez.com">
+	<title>{{ title }}</title>
+    <link rel="favicon" href="{% static 'assets/images/favicon.png' %}">
+
+    {% block css %}
+    	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    	<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    	<link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css' %}"> 
+    	<link rel="stylesheet" href="{% static 'assets/css/bootstrap-theme.css' %}" media="screen"> 
+    	<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    {% endblock css %}
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="{% static 'assets/js/html5shiv.js' %}"></script>
+	<script src="{% static 'assets/js/respond.min.js' %}"></script>
+	<![endif]-->
+</head>
+<body>
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<!-- Button for smallest screens -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+				<a class="navbar-brand" href="{% url 'main:home' %}">
+					<img src="{% static 'assets/images/logo.png' %}" alt="Techro HTML5 template"></a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav pull-right mainNav">
+                    {% block navbar %}
+					<li><a href="{% url 'main:home' %}">Home</a></li>
+					<li><a href="{% url 'main:about' %}">About</a></li>
+					<li><a href="{% url 'main:services' %}">Services</a></li>
+					<li><a href="{% url 'main:price' %}">Price</a></li>
+					<li><a href="{% url 'main:projects' %}">Projects</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="{% url 'main:right-sidebar' %}">Right Sidebar</a></li>
+							<li><a href="#">Dummy Link1</a></li>
+							<li><a href="#">Dummy Link2</a></li>
+							<li><a href="#">Dummy Link3</a></li>
+						</ul>
+					</li>
+					<li><a href="{% url 'main:contact' %}">Contact</a></li>
+                    {% endblock navbar %}
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</div>
+	<!-- /.navbar -->
+
+	{% block header %}
+	<header id="head" class="secondary">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h1>{{ title }}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    {% endblock header %}
+	
+    {% block content %}{% endblock content %}
+	
+    {% block footer %}
+      <section class="btm-section secpadding">
+	  <div class="container">
+      <div class="row">
+      	    <div class="col-md-4"><div class="title-box clearfix "><h3 class="title-box_primary">New Projects</h3></div> 
+            <div class="list styled custom-list">
+            <ul>
+            <li><a title="Snatoque penatibus et magnis dis partu rient montes ascetur ridiculus mus." href="#">Singapore Township</a></li>
+            <li><a title="Fusce feugiat malesuada odio. Morbi nunc odio gravida at cursus nec luctus." href="#">Mega luxury Villas</a></li>
+            <li><a title="Penatibus et magnis dis parturient montes ascetur ridiculus mus." href="#">RNT Commercial Shopping Mall</a></li>
+            <li><a title="Morbi nunc odio gravida at cursus nec luctus a lorem. Maecenas tristique orci." href="#">SVN Independent & Duplex Houses</a></li>
+            <li><a title="Snatoque penatibus et magnis dis partu rient montes ascetur ridiculus mus." href="#">World wide IT park</a></li>
+            <li><a title="Fusce feugiat malesuada odio. Morbi nunc odio gravida at cursus nec luctus." href="#">North Arena SNT Township</a></li>
+            </ul>
+            </div>
+         </div>
+        
+        <div class="col-md-4"><div class="title-box clearfix "><h3 class="title-box_primary">Large Projects</h3></div> 
+            <div class="list styled custom-list">
+            <ul>
+            <li><a title="Snatoque penatibus et magnis dis partu rient montes ascetur ridiculus mus." href="#">Singapore Township</a></li>
+            <li><a title="Fusce feugiat malesuada odio. Morbi nunc odio gravida at cursus nec luctus." href="#">Mega luxury Villas</a></li>
+            <li><a title="Penatibus et magnis dis parturient montes ascetur ridiculus mus." href="#">RNT Commercial Shopping Mall</a></li>
+            <li><a title="Morbi nunc odio gravida at cursus nec luctus a lorem. Maecenas tristique orci." href="#">SVN Independent & Duplex Houses</a></li>
+            <li><a title="Snatoque penatibus et magnis dis partu rient montes ascetur ridiculus mus." href="#">World wide IT park</a></li>
+            <li><a title="Fusce feugiat malesuada odio. Morbi nunc odio gravida at cursus nec luctus." href="#">North Arena SNT Township</a></li>
+            </ul>
+            </div>
+         </div>
+         <div class="col-md-4"><div class="title-box clearfix "><h3 class="title-box_primary">Our Clients</h3></div> 
+            <blockquote class="blockquote-1">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid</p>
+					<small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+				</blockquote></div>
+         
+      </div></div>
+      </section>
+      
+    	 
+    <footer id="footer">
+	 
+		<div class="footer2">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-md-6 panel">
+						<div class="panel-body">
+							<p class="simplenav">
+								<a href="index.html">Home</a> | 
+								<a href="about.html">About</a> |
+								<a href="services.html">Services</a> |
+								<a href="price.html">Price</a> |
+								<a href="projects.html">Projects</a> |
+								<a href="contact.html">Contact</a>
+							</p>
+						</div>
+					</div>
+
+					<div class="col-md-6 panel">
+						<div class="panel-body">
+							<p class="text-right">
+								Copyright &copy; 2015. Template by <a href="http://webthemez.com/" rel="develop">WebThemez.com</a>
+							</p>
+						</div>
+					</div>
+
+				</div>
+				<!-- /row of panels -->
+			</div>
+		</div>
+	</footer>
+    {% endblock footer %}
+
+	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+
+    {% block scripts %}
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        <script src="{% static 'assets/js/custom.js' %}"></script>
+    {% endblock scripts %}
+    
+</body>
+</html>
